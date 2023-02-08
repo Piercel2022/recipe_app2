@@ -65,7 +65,7 @@ Clone this repository to your desired folder:
 ### Install
 Install this project with:
 ```sh
-  rbenv install 3.1.2
+  rbenv install 3.1.3
   bundle install
 ```
 
