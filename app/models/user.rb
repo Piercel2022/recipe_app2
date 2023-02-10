@@ -7,5 +7,9 @@ class User < ApplicationRecord
   # Association
   has_many :recipes, dependent: :destroy
   has_many :foods, dependent: :destroy
-  validates :name, presence: true
+
+  # validations
+  validates :name, presence: true, length: { maximum: 50 }
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: email_regex }, uniqueness: { case_sensitive: false }
 end
