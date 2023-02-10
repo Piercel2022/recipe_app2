@@ -1,6 +1,11 @@
 class FoodsController < ApplicationController
+  # before_action :authenticate_user!
   def index
-    @foods = Food.all
+    @food = Food.all
+  end
+
+  def show
+    @food = Food.find(params[:id])
   end
 
   def new
@@ -8,19 +13,31 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
-    @food.user = current_user
+    @food = Food.new(
+      name: food_params[:name],
+      measurement_unit: food_params[:measurement_unit],
+      price: food_params[:price],
+      quantity: food_params[:quantity],
+      user_id: current_user.id
+    )
+
     if @food.save
       redirect_to foods_path
     else
-      render :new
+      render :new, alert: ':( Cannot Create food retry again :('
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
+
     redirect_to foods_path
+
+    if @food.destroy
+      flash[:success] = 'Food deleted'
+    else
+      flash.now[:error] = 'Food Not Deleted'
+    end
   end
 
   private
