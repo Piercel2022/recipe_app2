@@ -74,6 +74,9 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     cancancan (3.4.0)
     capybara (3.38.0)
       addressable
@@ -96,6 +99,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -166,6 +170,10 @@ GEM
       activesupport (= 7.0.4.2)
       bundler (>= 1.15.0)
       railties (= 7.0.4.2)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -187,6 +195,23 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
+    rspec-core (3.12.1)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     rubocop (1.44.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -209,6 +234,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -229,6 +256,7 @@ GEM
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -254,6 +282,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bullet
   cancancan
   capybara
   debug
@@ -263,9 +292,12 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
+  rails-controller-testing
+  rspec-rails
   rubocop (>= 1.0, < 2.0)
   rubocop-rails (~> 2.17, >= 2.17.4)
   selenium-webdriver
+  shoulda-matchers (~> 5.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
