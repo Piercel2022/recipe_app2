@@ -12,7 +12,7 @@ class RecipeFoodsController < ApplicationController
     @recipes_foods = RecipeFood.where('food_id = :x and recipe_id = :y',
                                       x: recipes_foods_params[:food_id], y: recipes_foods_params[:recipe_id])
 
-    if @recipes_foods.size.zero?
+    if @recipes_foods.empty?
       @recipes_foods = RecipeFood.new(recipes_foods_params)
     else
       @recipes_foods.update(recipes_foods_params)

@@ -85,6 +85,11 @@ To run the project, execute the following command:
 - GitHub: (https://github.com/Piercel2022)
 - Twitter: (https://twitter.com/pier_celestin)
 - LinkedIn: (https://linkedin.com/in/pierrecelestinmax)
+## 👥 Author1 <a name="authors">Husseini Mudi</a>
+
+- GitHub: (https://github.com/profsain)
+- Twitter: (https://twitter.com/profsain)
+- LinkedIn: (https://linkedin.com/in/profsain)
 
 ## 🔭 Future Features <a name="future-features"></a>
 - [ ] **Add devise**
